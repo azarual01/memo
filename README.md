@@ -176,3 +176,170 @@ Des SGBD de type NoSQL sont également présentés, tel que Cassandra, Redis ou 
 	>  - SELECT * FROM produit WHERE nom = 'ordinateur' OR nom = 'clavier';
 	>  - SELECT * FROM produit WHERE ( categorie = 'informatique' AND stock < 20 ) OR ( categorie = 'fourniture' AND stock < 200 );
 
+
+	- IN:
+	
+	>  L’opérateur logique IN dans SQL  s’utilise avec la commande WHERE pour vérifier si une colonne est égale à une des valeurs comprise dans set de valeurs déterminés. C’est une méthode simple pour vérifier si une colonne est égale à une valeur OU une autre valeur OU une autre valeur et ainsi de suite, sans avoir à utiliser de multiple fois l’opérateur OR.
+
+	EXEMPLES:
+	
+	>  - SELECT nom_colonne FROM table WHERE nom_colonne IN ( valeur1, valeur2, valeur3, ... );
+	>  - SELECT prenom FROM utilisateur WHERE prenom = 'Maurice' OR prenom = 'Marie' OR prenom = 'Thimoté';
+	>  - SELECT prenom FROM utilisateur WHERE prenom IN ( 'Maurice', 'Marie', 'Thimoté' );
+	>  - SELECT * FROM adresse WHERE addr_ville IN ( 'Paris', 'Graimbouville' );
+
+
+	- BETWEEN:
+	
+	>  L’opérateur BETWEEN est utilisé dans une requête SQL pour sélectionner un intervalle de données dans une requête utilisant WHERE. L’intervalle peut être constitué de chaînes de caractères, de nombres ou de dates. L’exemple le plus concret consiste par exemple à récupérer uniquement les enregistrements entre 2 dates définies.
+
+	EXEMPLES:
+	
+	>  - SELECT * FROM table WHERE nom_colonne BETWEEN 'valeur1' AND 'valeur2';
+	>  - SELECT * FROM utilisateur WHERE date_inscription BETWEEN ‘2012-04-01’ AND ‘2012-04-20’;
+	>  - SELECT * FROM utilisateur WHERE id NOT BETWEEN 4 AND 10;
+
+
+	- LIKE:
+	
+	>  L’opérateur LIKE est utilisé dans la clause WHERE des requêtes SQL. Ce mot-clé permet d’effectuer une recherche sur un modèle particulier. Il est par exemple possible de rechercher les enregistrements dont la valeur d’une colonne commence par telle ou telle lettre. Les modèles de recherches sont multiple.
+
+	EXEMPLES:
+	
+	>  - SELECT * FROM table WHERE colonne LIKE modele;
+	>  - SELECT * FROM client WHERE ville LIKE 'N%';
+	>  - SELECT * FROM client WHERE ville LIKE '%e';
+
+
+	- DISTINCT:
+	
+	>  L’utilisation de la commande SELECT en SQL permet de lire toutes les données d’une ou plusieurs colonnes. Cette commande peut potentiellement afficher des lignes en doubles. Pour éviter des redondances dans les résultats il faut simplement ajouter DISTINCT après le mot SELECT.
+
+	EXEMPLES:
+	
+	>  - SELECT DISTINCT ma_colonne FROM nom_du_tableau;
+	>  - SELECT UNIQUE ma_colonne FROM nom_du_tableau;
+	>  - SELECT DISTINCT prenom FROM client;
+
+
+	- GROUP BY:
+	
+	>  La commande GROUP BY est utilisée en SQL pour grouper plusieurs résultats et utiliser une fonction de totaux sur un groupe de résultat. Sur une table qui contient toutes les ventes d’un magasin, il est par exemple possible de liste regrouper les ventes par clients identiques et d’obtenir le coût total des achats pour chaque client.
+
+	EXEMPLES:
+	
+	>  - SELECT colonne1, fonction(colonne2) FROM table GROUP BY colonne1;
+	>  - SELECT client, SUM(tarif) FROM achat GROUP BY client;
+	>  - SELECT client, SUM(tarif) FROM achat;
+
+
+	- ORDER BY:
+	
+	>  La commande ORDER BY permet de trier les lignes dans un résultat d’une requête SQL. Il est possible de trier les données sur une ou plusieurs colonnes, par ordre ascendant ou descendant.
+
+	EXEMPLES:
+	
+	>  - SELECT colonne1, colonne2 FROM table ORDER BY colonne1;
+	>  - SELECT colonne1, colonne2, colonne3 FROM table ORDER BY colonne1 DESC, colonne2 ASC;
+	>  - SELECT * FROM utilisateur ORDER BY nom;
+	>  - SELECT * FROM utilisateur ORDER BY nom, date_inscription DESC;
+	
+- LES JOINTURES:
+
+	- INTERSECT:
+	
+	>  La commande SQL INTERSECT permet d’obtenir l’intersection des résultats de 2 requêtes. Cette commande permet donc de récupérer les enregistrements communs à 2 requêtes. Cela peut s’avérer utile lorsqu’il faut trouver s’il y a des données similaires sur 2 tables distinctes.
+	
+	EXEMPLES:
+	
+	>  - SELECT * FROM `table1`	INTERSECT	SELECT * FROM `table2`;
+	>  - SELECT * FROM `magasin1_client`	INTERSECT	SELECT * FROM `magasin2_client`;
+	>  - SELECT DISTINCT value FROM `table1` WHERE value IN (  SELECT value   FROM `table2`);
+
+
+	- UNION:
+	
+	>  La commande UNION de SQL permet de mettre bout-à-bout les résultats de plusieurs requêtes utilisant elles-même la commande SELECT. C’est donc une commande qui permet de concaténer les résultats de 2 requêtes ou plus. Pour l’utiliser il est nécessaire que chacune des requêtes à concaténer retournes le même nombre de colonnes, avec les mêmes types de données et dans le même ordre.
+	
+	EXEMPLES:
+	
+	>  - SELECT * FROM table1 UNION SELECT * FROM table2;
+	>  - SELECT * FROM magasin1_client UNION SELECT * FROM magasin2_client;
+
+
+	- INNER JOIN:
+	
+	>  Dans le langage SQL la commande INNER JOIN, aussi appelée EQUIJOIN, est un type de jointures très communes pour lier plusieurs tables entre-elles. Cette commande retourne les enregistrements lorsqu’il y a au moins une ligne dans chaque colonne qui correspond à la condition.
+	
+	EXEMPLES:
+	
+	>  - SELECT * FROM table1 INNER JOIN table2 ON table1.id = table2.fk_id;
+	>  - SELECT * FROM table1 INNER JOIN table2 WHERE table1.id = table2.fk_id;
+	>  - SELECT id, prenom, nom, date_achat, num_facture, prix_total FROM utilisateur INNER JOIN commande ON utilisateur.id = commande.utilisateur_id;
+
+
+	- CROSS JOIN:
+	
+	>  Dans le langage SQL, la commande CROSS JOIN est un type de jointure sur 2 tables SQL qui permet de retourner le produit cartésien. Autrement dit, cela permet de retourner chaque ligne d’une table avec chaque ligne d’une autre table. Ainsi effectuer le produit cartésien d’une table A qui contient 30 résultats avec une table B de 40 résultats va produire 1200 résultats (30 x 40 = 1200). En général la commande CROSS JOIN est combinée avec la commande WHERE pour filtrer les résultats qui respectent certaines conditions.
+	
+	EXEMPLES:
+	
+	>  - SELECT * FROM table1 CROSS JOIN table2;
+	>  - SELECT * FROM table1, table2;
+	>  - SELECT l_id, l_nom_fr_fr, f_id, f_nom_fr_fr FROM legume CROSS JOIN fruit;
+	>  - SELECT l_id, l_nom_fr_fr, f_id, f_nom_fr_fr FROM legume, fruit;
+
+
+	- LEFT JOIN:
+	
+	>  Dans le langage SQL, la commande LEFT JOIN (aussi appelée LEFT OUTER JOIN) est un type de jointure entre 2 tables. Cela permet de lister tous les résultats de la table de gauche (left = gauche) même s’il n’y a pas de correspondance dans la deuxième tables.
+	
+	EXEMPLES:
+	
+	>  - SELECT * FROM table1 LEFT JOIN table2 ON table1.id = table2.fk_id;
+	>  - SELECT * FROM table1 LEFT OUTER JOIN table2 ON table1.id = table2.fk_id;
+	>  - SELECT * FROM utilisateur LEFT JOIN commande ON utilisateur.id = commande.utilisateur_id;
+	>  - SELECT id, prenom, nom, utilisateur_id FROM utilisateur LEFT JOIN commande ON utilisateur.id = commande.utilisateur_id WHERE utilisateur_id IS NULL;
+
+
+	- RIGHT JOIN:
+	
+	>  En SQL, la commande RIGHT JOIN (ou RIGHT OUTER JOIN) est un type de jointure entre 2 tables qui permet de retourner tous les enregistrements de la table de droite (right = droite) même s’il n’y a pas de correspondance avec la table de gauche. S’il y a un enregistrement de la table de droite qui ne trouve pas de correspondance dans la table de gauche, alors les colonnes de la table de gauche auront NULL pour valeur.
+	
+	EXEMPLES:
+	
+	>  - SELECT * FROM table1 RIGHT JOIN table2 ON table1.id = table2.fk_id;
+	>  - SELECT * FROM table1 RIGHT OUTER JOIN table2 ON table1.id = table2.fk_id;
+	>  - SELECT id, prenom, nom, utilisateur_id, date_achat, num_facture  FROM utilisateur  RIGHT JOIN commande ON utilisateur.id = commande.utilisateur_id;
+
+
+	- FULL JOIN:
+	
+	>  Dans le langage SQL, la commande FULL JOIN (ou FULL OUTER JOIN) permet de faire une jointure entre 2 tables. L’utilisation de cette commande permet de combiner les résultats des 2 tables, les associer entre eux grâce à une condition et remplir avec des valeurs NULL si la condition n’est pas respectée.
+	
+	EXEMPLES:
+	
+	>  - SELECT * FROM table1 FULL JOIN table2 ON table1.id = table2.fk_id;
+	>  - SELECT * FROM table1 FULL OUTER JOIN table2 ON table1.id = table2.fk_id;
+	>  - SELECT id, prenom, nom, utilisateur_id, date_achat, num_facture FROM utilisateur FULL JOIN commande ON utilisateur.id = commande.utilisateur_id;
+
+
+	- SELF JOIN:
+	
+	>  En SQL, un SELF JOIN correspond à une jointure d’une table avec elle-même. Ce type de requête n’est pas si commun mais très pratique dans le cas où une table lie des informations avec des enregistrements de la même table.
+	
+	EXEMPLES:
+	
+	>  - SELECT `t1`.`nom_colonne1`, `t1`.`nom_colonne2`, `t2`.`nom_colonne1`, `t2`.`nom_colonne2` FROM `table` as `t1` LEFT OUTER JOIN `table` as `t2` ON `t2`.`fk_id` = `t1`.`id`;
+	>  - SELECT `u1`.`u_id`, `u1`.`u_nom`, `u2`.`u_id`, `u2`.`u_nom` FROM `utilisateur` as `u1` LEFT OUTER JOIN `utilisateur` as `u2` ON `u2`.`u_manager_id` = `u1`.`u_id`;
+
+
+	- NATURAL JOIN:
+	
+	>  Dans le langage SQL, la commande NATURAL JOIN permet de faire une jointure naturelle entre 2 tables. Cette jointure s’effectue à la condition qu’il y ai des colonnes du même nom et de même type dans les 2 tables. Le résultat d’une jointure naturelle est la création d’un tableau avec autant de lignes qu’il y a de paires correspondant à l’association des colonnes de même nom.
+	
+	EXEMPLES:
+	
+	>  - SELECT * FROM table1 NATURAL JOIN table2;
+	>  - SELECT * FROM utilisateur NATURAL JOIN pays;
+

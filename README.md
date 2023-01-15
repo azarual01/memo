@@ -45,18 +45,29 @@ Des SGBD de type NoSQL sont également présentés, tel que Cassandra, Redis ou 
     
 - Commande basique:
   - SELECT:
-    	L’utilisation la plus courante de SQL consiste à lire des données issues de la base de données. Cela s’effectue grâce à la commande SELECT, qui retourne des enregistrements dans un tableau de résultat. Cette commande peut sélectionner une ou plusieurs colonnes d’une table.
+  
+  	L’utilisation la plus courante de SQL consiste à lire des données issues de la base de données. Cela s’effectue grâce à la commande SELECT, qui retourne des enregistrements dans un tableau de résultat. Cette commande peut sélectionner une ou plusieurs colonnes d’une table.
 	
 	Exemples:
   
-    > 	- SELECT nom_du_champ FROM nom_du_tableau
-    >	- SELECT ville FROM client
-    >	- SELECT prenom, nom FROM client
-    >   - SELECT * FROM client
-    >   - SELECT * FROM table WHERE condition GROUP BY expression HAVING condition { UNION | INTERSECT | EXCEPT } ORDER BY expression LIMIT count OFFSET start
+    > 	- SELECT nom_du_champ FROM nom_du_tableau;
+    >	- SELECT ville FROM client;
+    >	- SELECT prenom, nom FROM client;
+    >   - SELECT * FROM client;
+    >   - SELECT * FROM table WHERE condition GROUP BY expression HAVING condition { UNION | INTERSECT | EXCEPT } ORDER BY expression LIMIT count OFFSET start;
 
 
   - INSERT INTO: 
 
-  
+	L’insertion de données dans une table s’effectue à l’aide de la commande INSERT INTO. Cette commande permet au choix d’inclure une seule ligne à la base existante ou plusieurs lignes d’un coup.
+	
+	Exemples:
+	
+    > 	- INSERT INTO table VALUES ('valeur 1', 'valeur 2', ...);
+    >	- INSERT INTO table (nom_colonne_1, nom_colonne_2, ... VALUES ('valeur 1', 'valeur 2', ...);
+    >	- INSERT INTO client (prenom, nom, ville, age) VALUES ('Rébecca', 'Armand', 'Saint-Didier-des-Bois', 24),('Aimée', 'Hebert', 'Marigny-le-Châtel', 36),
+ ('Marielle', 'Ribeiro', 'Maillères', 27),('Hilaire', 'Savary', 'Conie-Molitard', 58);
+
+
+
 

@@ -1,7 +1,7 @@
 
-# memo-sql    Azarual El-Ghazi
+# Mémo-sql    Azarual El-Ghazi
 
-Description:
+Description :
 - Le SQL (Structured Query Language) est un langage permettant de communiquer avec une base de données. Ce langage informatique est notamment très utilisé par les développeurs web pour communiquer avec les données d’un site web. SQL.sh recense des cours de SQL et des explications sur les principales commandes pour lire, insérer, modifier et supprimer des données dans une base.
 
 - Système de gestion de base de données (SGBD)
@@ -9,8 +9,8 @@ Chaque SGBD possède ses propres spécificités et caractéristiques. Pour prés
 Des SGBD de type NoSQL sont également présentés, tel que Cassandra, Redis ou MongoDB.
 
     
-- COMMANDE BASIQUE:
-  - SELECT:
+- COMMANDE BASIQUE :
+  - SELECT :
   
   	L’utilisation la plus courante de SQL consiste à lire des données issues de la base de données. Cela s’effectue grâce à la commande SELECT, qui retourne des enregistrements dans un tableau de résultat. Cette commande peut sélectionner une ou plusieurs colonnes d’une table.
 	
@@ -23,11 +23,11 @@ Des SGBD de type NoSQL sont également présentés, tel que Cassandra, Redis ou 
     >   - SELECT * FROM table WHERE condition GROUP BY expression HAVING condition { UNION | INTERSECT | EXCEPT } ORDER BY expression LIMIT count OFFSET start;
 
 
-  - INSERT INTO: 
+  - INSERT INTO : 
 
 	L’insertion de données dans une table s’effectue à l’aide de la commande INSERT INTO. Cette commande permet au choix d’inclure une seule ligne à la base existante ou plusieurs lignes d’un coup.
 	
-	Exemples:
+	Exemples :
 	
     > 	- INSERT INTO table VALUES ('valeur 1', 'valeur 2', ...);
     >	- INSERT INTO table (nom_colonne_1, nom_colonne_2, ...) VALUES ('valeur 1', 'valeur 2', ...);
@@ -35,11 +35,11 @@ Des SGBD de type NoSQL sont également présentés, tel que Cassandra, Redis ou 
  ('Marielle', 'Ribeiro', 'Maillères', 27),('Hilaire', 'Savary', 'Conie-Molitard', 58);
  
  
-  - UPDATE:
+  - UPDATE :
   
   	La commande UPDATE permet d’effectuer des modifications sur des lignes existantes. Très souvent cette commande est utilisée avec WHERE pour spécifier sur quelles lignes doivent porter la ou les modifications.
 	
-	Exemples:
+	Exemples :
   
     > 	- UPDATE table SET nom_colonne_1 = 'nouvelle valeur' WHERE condition;
     >	- UPDATE table SET colonne_1 = 'valeur 1', colonne_2 = 'valeur 2', colonne_3 = 'valeur 3' WHERE condition;

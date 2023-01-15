@@ -44,8 +44,10 @@ Des SGBD de type NoSQL sont également présentés, tel que Cassandra, Redis ou 
 
     
 - Commande basique:
-  -SELECT:  
+  - SELECT:  
   	L’utilisation la plus courante de SQL consiste à lire des données issues de la base de données. Cela s’effectue grâce à la commande SELECT, qui retourne des enregistrements dans un tableau de résultat. Cette commande peut sélectionner une ou plusieurs colonnes d’une table.
+	
+	Exemples:
   
     > 	- SELECT nom_du_champ FROM nom_du_tableau
     >	- SELECT ville FROM client

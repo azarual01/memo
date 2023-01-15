@@ -59,7 +59,7 @@ Des SGBD de type NoSQL sont également présentés, tel que Cassandra, Redis ou 
     >	- DELETE FROM `utilisateur`;
     >	- TRUNCATE TABLE `utilisateur`;
 
-  - CREATE DATABASE
+  - CREATE DATABASE:
   
 	La création d’une base de données en SQL est possible en ligne de commande. Même si les systèmes de gestion de base de données (SGBD) sont souvent utilisés pour créer une base, il convient de connaître la commande à utiliser, qui est très simple.
 	
@@ -69,7 +69,7 @@ Des SGBD de type NoSQL sont également présentés, tel que Cassandra, Redis ou 
    >    - CREATE DATABASE IF NOT EXISTS ma_base;
 
 
-  - DROP DATABASE
+  - DROP DATABASE:
 
 	En SQL, la commande DROP DATABASE permet de supprimer totalement une base de données et tout ce qu’elle contient. Cette commande est à utiliser avec beaucoup d’attention car elle permet de supprimer tout ce qui est inclus dans une base: les tables, les données, les index …
 	
@@ -81,7 +81,7 @@ Des SGBD de type NoSQL sont également présentés, tel que Cassandra, Redis ou 
   >    - DROP TABLE client_2009;
 
 
-  - ALTER TABLE
+  - ALTER TABLE:
 
 	La commande ALTER TABLE en SQL permet de modifier une table existante. Idéal pour ajouter une colonne, supprimer une colonne ou modifier une colonne existante, par exemple pour changer le type.
 	
@@ -95,7 +95,7 @@ Des SGBD de type NoSQL sont également présentés, tel que Cassandra, Redis ou 
   >    - ALTER TABLE nom_table MODIFY nom_colonne type_donnees;
   >    - ALTER TABLE nom_table CHANGE colonne_ancien_nom colonne_nouveau_nom type_donnees;
 
-- CREATE USERS AND GRANT PERMISSIONS
+- CREATE USERS AND GRANT PERMISSIONS:
 	
 	exemples:
 	

@@ -64,7 +64,7 @@ Des SGBD de type NoSQL sont également présentés, tel que Cassandra, Redis ou 
 	La création d’une base de données en SQL est possible en ligne de commande. Même si les systèmes de gestion de base de données (SGBD) sont souvent utilisés pour créer une base, il convient de connaître la commande à utiliser, qui est très simple.
 	
 	Exemples:
-	
+
    >    - CREATE DATABASE ma_base;
    >    - CREATE DATABASE IF NOT EXISTS ma_base;
 

@@ -39,8 +39,57 @@ d’analyser les changements apportés par cette évolution majeure. Elle impliq
 généralement des adaptations de code et des tests de bon fonctionnement (cette
 modification s’effectue systématiquement dans une branche à part).
 
-# org.springframework.boot
-    - Licence : 
-    - Version :
-    - Vulnérabilités : 
-    - Remarques : 
+# org.springframework.boot:spring-boot-starter-parent : 
+    - Licence : Apache Licence 2.0
+    - Version : 3.0.4 (latest)
+    - Vulnérabilités : Contient des Vulnérabilités
+
+# org.springframework.boot:spring-boot-starter-web : 
+    - Licence : Apache Licence 2.0
+    - Version : 3.0.4 (latest)
+    - Vulnérabilités : Pas de Vulnérabilité
+
+
+# junit:junit :
+    - Licence : EPL 1.0
+    - Version : 4.13.2 (latest)
+    - Vulnérabilités : Pas de Vulnérabilité
+
+# org.springframework.boot:spring-boot-starter-test :
+    - Licence : Apache Licence 2.0
+    - Version : 3.0.4 (latest)
+    - Vulnérabilités : Pas de Vulnérabilité
+
+# fr.le_campus_numerique.square_games:engine :
+    - Licence : ?
+    - Version : ?
+    - Vulnérabilités : ?
+
+# mysql:mysql-connector-java : 
+     - Licence : Apache Licence 2.0
+    - Version : 8.0.32 (latest)
+    - Vulnérabilités : Pas de Vulnérabilité
+
+
+
+# com.github.ydespreaux.spring.data:spring-data-jpa-criteria :
+1.2.0
+
+# org.springframework.boot:spring-boot-starter-security : 
+
+# io.jsonwebtoken:jjwt :
+0.9.1
+
+# javax.xml.bind:jaxb-api :
+2.4.0-b180830.0359
+
+# com.sun.xml.bind:jaxb-core :
+4.0.2
+
+# com.sun.xml.bind:jaxb-impl :
+4.0.2
+
+# org.apache.maven.plugins:maven-checkstyle-plugin :
+3.2.1
+
+# 

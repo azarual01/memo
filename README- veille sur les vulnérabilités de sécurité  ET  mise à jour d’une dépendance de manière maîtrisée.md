@@ -1,3 +1,6 @@
+#       Memo Azarual El-Ghazi  - Bonnes pratiques
+
+
 # Savoir effectuer une mise à jour d’une dépendance de manière maîtrisée
 
 Pour effectuer une mise à jour d’une dépendance de manière maîtrisée : il faut suivre les notes de version (Release notes)

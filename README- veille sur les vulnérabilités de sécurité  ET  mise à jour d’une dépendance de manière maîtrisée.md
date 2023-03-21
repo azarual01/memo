@@ -18,6 +18,17 @@ bugs à corriger et des méthodes dépréciées à remplacer ...
 
 
 
+# com.github.ydespreaux.spring.data:spring-data-jpa-criteria :
+    - Licence : Apache Licence 2.0
+    - Version : 1.2.0 (latest)
+    - Vulnérabilités : Vulnérabilités venant des autres dépendances (Vulnerabilities from dependencies)
+
+    # remplacé par  org.springframework.boot:spring-boot-starter-data-jpa
+    - Licence : Apache Licence 2.0
+    - Version : 3.0.4 (latest)
+    - Vulnérabilités : Pas de vulnérabilités connues
+
+
 # org.springframework.boot:spring-boot-starter-parent : 
     - Licence : Apache Licence 2.0
     - Version : 3.0.4 (latest)
@@ -50,11 +61,6 @@ bugs à corriger et des méthodes dépréciées à remplacer ...
     - Vulnérabilités : Pas de vulnérabilités connues
 
 
-
-# com.github.ydespreaux.spring.data:spring-data-jpa-criteria :
-    - Licence : Apache Licence 2.0
-    - Version : 1.2.0 (latest)
-    - Vulnérabilités : Vulnérabilités venant des autres dépendances (Vulnerabilities from dependencies)
 
 # org.springframework.boot:spring-boot-starter-security : 
     - Licence : Apache Licence 2.0
